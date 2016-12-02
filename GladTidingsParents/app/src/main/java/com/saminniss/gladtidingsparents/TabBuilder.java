@@ -17,6 +17,8 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 /**
  * A placeholder fragment containing a simple view.
  */
@@ -42,14 +44,46 @@ public class TabBuilder extends Fragment {
         return fragment;
     }
 
+    public TextView MakeButton(Context context, TableRow parent_view, float h_weight,
+                               int background_id, final String go_here, String tv_text) {
+        // make textview and add style from styles.TextStyle
+        TextView tv = new TextView(context);
+        if(Build.VERSION.SDK_INT >= 23)
+            tv.setTextAppearance(R.style.TextStyle);
+        else
+            tv.setTextAppearance(context, R.style.TextStyle);
+
+        // set horizontal weight
+        TableRow.LayoutParams tv_params = new TableRow.LayoutParams();
+        tv_params.weight = h_weight;
+        tv.setLayoutParams(tv_params);
+
+        // set background and center text
+        tv.setBackgroundResource(background_id);
+        tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        tv.setGravity(Gravity.CENTER);
+
+        // go to url when you click
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(go_here));
+                startActivity(browserIntent);
+            }
+        });
+
+        tv.setText(tv_text);
+
+        parent_view.addView(tv);
+        return tv;
+    }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.tab, container, false);
         TextView textView = (TextView) rootView.findViewById(R.id.section_label);
         Context this_context = getContext();
-        float text_size = 22f;
-        String text_color = "#ca2017";
 
         switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
             case 0:
@@ -60,7 +94,12 @@ public class TabBuilder extends Fragment {
                 tr_params.weight = 0.25f;
                 tr1.setLayoutParams(tr_params);
                 tr1.setGravity(Gravity.CENTER);
+
                 // Row 1 Text Views
+                MakeButton(this_context, tr1, 0.5f, R.mipmap.calendar, "http://www.gtcacademy.org/calendar/", "CALENDAR");
+                MakeButton(this_context, tr1, 0.5f, R.mipmap.calendar, "http://www.gtcacademy.org/news/", "NEWS");
+
+                /*
                 TextView cal_tv = new TextView(this_context);
                 TextView news_tv = new TextView(this_context);
 
@@ -72,9 +111,9 @@ public class TabBuilder extends Fragment {
                     cal_tv.setTextAppearance(this_context, R.style.TextStyle);
                     news_tv.setTextAppearance(this_context, R.style.TextStyle);
                 }
-
+*/
                 TableRow.LayoutParams tv_params = new TableRow.LayoutParams();
-                tv_params.weight = 0.5f;
+                tv_params.weight = 0.5f;/*
                 cal_tv.setLayoutParams(tv_params);
                 news_tv.setLayoutParams(tv_params);
 
@@ -105,7 +144,7 @@ public class TabBuilder extends Fragment {
                 cal_tv.setText("CALENDAR");
                 news_tv.setText("NEWS");
                 tr1.addView(cal_tv);
-                tr1.addView(news_tv);
+                tr1.addView(news_tv); */
 
 
                 // Row 2
