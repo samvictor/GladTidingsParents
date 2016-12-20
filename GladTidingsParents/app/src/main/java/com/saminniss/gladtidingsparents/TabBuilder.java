@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -44,7 +45,7 @@ public class TabBuilder extends Fragment {
         return fragment;
     }
 
-    public TextView MakeButton(Context context, TableRow parent_view, float h_weight,
+    public TextView MakeButton(Context context, LinearLayout parent_view, float h_weight,
                                int background_id, final String go_here, String tv_text) {
         // make textview and add style from styles.TextStyle
         TextView tv = new TextView(context);
@@ -54,8 +55,7 @@ public class TabBuilder extends Fragment {
             tv.setTextAppearance(context, R.style.TextStyle);
 
         // set horizontal weight
-        TableRow.LayoutParams tv_params = new TableRow.LayoutParams();
-        tv_params.weight = h_weight;
+        LinearLayout.LayoutParams tv_params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, h_weight);
         tv.setLayoutParams(tv_params);
 
         // set background and center text
@@ -88,135 +88,77 @@ public class TabBuilder extends Fragment {
         switch (getArguments().getInt(ARG_SECTION_NUMBER)) {
             case 0:
                 textView.setText("Pre K3 - 3rd Grade");
+
                 // Row 1
-                TableRow tr1 = (TableRow) rootView.findViewById(R.id.row_1);
-                TableLayout.LayoutParams tr_params = new TableLayout.LayoutParams();
-                tr_params.weight = 0.25f;
-                tr1.setLayoutParams(tr_params);
+                LinearLayout tr1 = (LinearLayout) rootView.findViewById(R.id.row_1);
+                /*LinearLayout.LayoutParams tr_params11 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 0.25f);
+                //tr_params11.weight = 0.25f;
+                tr1.setLayoutParams(tr_params11);*/
                 tr1.setGravity(Gravity.CENTER);
 
+
                 // Row 1 Text Views
-                MakeButton(this_context, tr1, 0.5f, R.mipmap.calendar, "http://www.gtcacademy.org/calendar/", "CALENDAR");
-                MakeButton(this_context, tr1, 0.5f, R.mipmap.calendar, "http://www.gtcacademy.org/news/", "NEWS");
-
-                /*
-                TextView cal_tv = new TextView(this_context);
-                TextView news_tv = new TextView(this_context);
-
-                if (Build.VERSION.SDK_INT >= 23) {
-                    cal_tv.setTextAppearance(R.style.TextStyle);
-                    news_tv.setTextAppearance(R.style.TextStyle);
-                }
-                else {
-                    cal_tv.setTextAppearance(this_context, R.style.TextStyle);
-                    news_tv.setTextAppearance(this_context, R.style.TextStyle);
-                }
-*/
-                TableRow.LayoutParams tv_params = new TableRow.LayoutParams();
-                tv_params.weight = 0.5f;/*
-                cal_tv.setLayoutParams(tv_params);
-                news_tv.setLayoutParams(tv_params);
-
-                cal_tv.setBackgroundResource(R.mipmap.calendar);
-                news_tv.setBackgroundResource(R.mipmap.calendar);
-
-                cal_tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                news_tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                cal_tv.setGravity(Gravity.CENTER);
-                news_tv.setGravity(Gravity.CENTER);
-
-                cal_tv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.gtcacademy.org/calendar/"));
-                        startActivity(browserIntent);
-                    }
-                });
-
-                news_tv.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.gtcacademy.org/news/"));
-                        startActivity(browserIntent);
-                    }
-                });
-
-                cal_tv.setText("CALENDAR");
-                news_tv.setText("NEWS");
-                tr1.addView(cal_tv);
-                tr1.addView(news_tv); */
+                MakeButton(this_context, tr1, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/calendar/", "CALENDAR");
+                MakeButton(this_context, tr1, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/news/", "NEWS");
 
 
                 // Row 2
-                TableRow tr2 = (TableRow) rootView.findViewById(R.id.row_2);
-                tr2.setLayoutParams(tr_params);
+                LinearLayout tr2 = (LinearLayout) rootView.findViewById(R.id.row_2);
+                /*LinearLayout.LayoutParams tr_params12 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 0.25f);
+                //tr_params12.weight = 1f;
+                tr2.setLayoutParams(tr_params12);*/
                 tr2.setGravity(Gravity.CENTER);
                 // Row 2 Text Views
-                TextView price_tv = new TextView(this_context);
-                TextView class_tv = new TextView(this_context);
-                price_tv.setLayoutParams(tv_params);
-                class_tv.setLayoutParams(tv_params);
-                price_tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                class_tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                MakeButton(this_context, tr2, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/pricing/", "PRICING");
+                MakeButton(this_context, tr2, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/classes/", "CLASSES");
 
-                price_tv.setText("Pricing");
-                class_tv.setText("Classes");
-                tr2.addView(price_tv);
-                tr2.addView(class_tv);
 
                 // Row 3
-                TableRow tr3 = (TableRow) rootView.findViewById(R.id.row_3);
-                tr3.setLayoutParams(tr_params);
+                LinearLayout tr3 = (LinearLayout) rootView.findViewById(R.id.row_3);
+                /*LinearLayout.LayoutParams tr_params13 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 0.25f);
+                //tr_params13.weight = 0.25f;
+                tr3.setLayoutParams(tr_params13);*/
                 tr3.setGravity(Gravity.CENTER);
+                // Row 3 Text Views
+                MakeButton(this_context, tr3, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/school-uniform/", "UNIFORM");
+                MakeButton(this_context, tr3, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/school-supplies/", "SUPPLIES");
 
                 // Row 4
-                TableRow tr4 = (TableRow) rootView.findViewById(R.id.row_4);
-                tr4.setLayoutParams(tr_params);
+                LinearLayout tr4 = (LinearLayout) rootView.findViewById(R.id.row_4);
+                /*LinearLayout.LayoutParams tr_params14 = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 0.25f);
+                //tr_params14.weight = 0.25f;
+                tr4.setLayoutParams(tr_params14); */
                 tr4.setGravity(Gravity.CENTER);
+                // Row 4 Text Views
+                MakeButton(this_context, tr4, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
+                        "REGISTRATION\nFORM");
+                MakeButton(this_context, tr4, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Academy-Private-Pay-Enrollment-Packet.pdf",
+                        "REGISTRATION\nPACKET");
 
-
-            break;
+                break;
             case 1:
                 textView.setText("6 Weeks - 36 Months");
 
                 // Row 1
-                TableRow tr11 = (TableRow) rootView.findViewById(R.id.row_1);
-                TableLayout.LayoutParams tr1_params = new TableLayout.LayoutParams();
+                LinearLayout tr11 = (LinearLayout) rootView.findViewById(R.id.row_1);
+                /*LinearLayout.LayoutParams tr1_params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 0, 0.25f);
                 tr1_params.weight = 0.33f;
-                tr11.setLayoutParams(tr1_params);
+                tr11.setLayoutParams(tr1_params);*/
                 tr11.setGravity(Gravity.CENTER);
 
                 // Row 1 Text Views
-                TextView closings_tv = new TextView(this_context);
-                TextView news1_tv = new TextView(this_context);
-                TableRow.LayoutParams tv1_params = new TableRow.LayoutParams();
-                tv1_params.weight = 0.5f;
-                closings_tv.setLayoutParams(tv1_params);
-                news1_tv.setLayoutParams(tv1_params);
-
-                closings_tv.setBackgroundResource(R.mipmap.calendar);
-                news1_tv.setBackgroundResource(R.mipmap.calendar);
-
-                if (Build.VERSION.SDK_INT >= 23) {
-                    closings_tv.setTextAppearance(R.style.TextStyle);
-                    news1_tv.setTextAppearance(R.style.TextStyle);
-                }
-                else {
-                    closings_tv.setTextAppearance(this_context, R.style.TextStyle);
-                    news1_tv.setTextAppearance(this_context, R.style.TextStyle);
-                }
-
-                closings_tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                news1_tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                closings_tv.setGravity(Gravity.CENTER);
-                news1_tv.setGravity(Gravity.CENTER);
-
-                closings_tv.setText("CLOSINGS");
-                news1_tv.setText("NEWS");
-                tr11.addView(closings_tv);
-                tr11.addView(news1_tv);
-
-
+                MakeButton(this_context, tr11, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/development-center/#calendar", "CLOSINGS");
+                MakeButton(this_context, tr11, 0.5f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/news/", "NEWS");
 
                 break;
             case 2:

@@ -19,40 +19,50 @@
         android:layout_alignParentStart="true"
         android:textAlignment="center" />
 
-    <TableLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:weightSum="1"
-        android:layout_below="@+id/section_label">
+        android:layout_below="@+id/section_label"
+        android:layout_alignParentStart="true">
 
-        <TableRow
-            android:id="@+id/row_1"
-            android:weightSum="1"
-            android:layout_weight="0"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-        <TableRow
-            android:id="@+id/row_2"
-            android:weightSum="1"
-            android:layout_weight="0"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                tools:layout_height="@dimen/button_height"
+                android:weightSum="1"
+                android:id="@+id/row_1"></LinearLayout>
 
-        <TableRow
-            android:id="@+id/row_3"
-            android:weightSum="1"
-            android:layout_weight="0"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                tools:layout_height="@dimen/button_height"
+                android:weightSum="1"
+                android:id="@+id/row_2"></LinearLayout>
 
-        <TableRow
-            android:id="@+id/row_4"
-            android:weightSum="1"
-            android:layout_weight="0"
-            android:layout_width="match_parent"
-            android:layout_height="0dp" />
-    </TableLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                tools:layout_height="@dimen/button_height"
+                android:weightSum="1"
+                android:id="@+id/row_3"></LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                tools:layout_height="@dimen/button_height"
+                android:weightSum="1"
+                android:id="@+id/row_4"></LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 
 </RelativeLayout>
