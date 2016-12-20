@@ -142,8 +142,8 @@ public class TabBuilder extends Fragment {
                 MakeButton(this_context, tr4, 0.5f, R.mipmap.calendar,
                         "http://www.gtcacademy.org/wp-content/uploads/2016/08/Academy-Private-Pay-Enrollment-Packet.pdf",
                         "REGISTRATION\nPACKET");
-
                 break;
+
             case 1:
                 textView.setText("6 Weeks - 36 Months");
 
@@ -153,19 +153,78 @@ public class TabBuilder extends Fragment {
                 tr1_params.weight = 0.33f;
                 tr11.setLayoutParams(tr1_params);*/
                 tr11.setGravity(Gravity.CENTER);
-
                 // Row 1 Text Views
                 MakeButton(this_context, tr11, 0.5f, R.mipmap.calendar,
-                        "http://www.gtcacademy.org/development-center/#calendar", "CLOSINGS");
+                        "http://www.gtcacademy.org/development-center/", "DEVELOPMENT CENTER");
                 MakeButton(this_context, tr11, 0.5f, R.mipmap.calendar,
                         "http://www.gtcacademy.org/news/", "NEWS");
 
+                // Row 2
+                LinearLayout tr12 = (LinearLayout) rootView.findViewById(R.id.row_2);
+                tr12.setGravity(Gravity.CENTER);
+                // Row 2 Text Views
+                MakeButton(this_context, tr12, 1, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/development-center/#pricing", "PRICING");
+
+                // Row 3
+                LinearLayout tr13 = (LinearLayout) rootView.findViewById(R.id.row_3);
+                tr13.setGravity(Gravity.CENTER);
+                // Row 3 Text Views
+                MakeButton(this_context, tr13, 1f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/development-center/#calendar", "CLOSINGS");
+
+                // Row 4
+                LinearLayout tr14 = (LinearLayout) rootView.findViewById(R.id.row_4);
+                tr14.setGravity(Gravity.CENTER);
+                // Row 4 Text Views
+                MakeButton(this_context, tr14, 1f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
+                        "REGISTRATION\nFORM");
                 break;
+
             case 2:
                 textView.setText("Payments");
+
+                // Row 1
+                LinearLayout tr21 = (LinearLayout) rootView.findViewById(R.id.row_1);
+                tr21.setGravity(Gravity.CENTER);
+                // Row 1 Text Views
+                MakeButton(this_context, tr21, 1f, R.mipmap.calendar,
+                        "https://www.tuitionexpress.com/", "TUITION EXPRESS");
+
+                // Row 2
+                LinearLayout tr22 = (LinearLayout) rootView.findViewById(R.id.row_2);
+                tr22.setGravity(Gravity.CENTER);
+                // Row 2 Text Views
+                MakeButton(this_context, tr22, 1f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/pricing/", "PRICING\nPre K3 - 3rd grade");
+
+                // Row 3
+                LinearLayout tr23 = (LinearLayout) rootView.findViewById(R.id.row_3);
+                tr23.setGravity(Gravity.CENTER);
+                // Row 3 Text Views
+                MakeButton(this_context, tr23, 1f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/development-center/#pricing", "PRICING\n6 weeks - 36 months");
+
+                // Row 4
+                LinearLayout tr24 = (LinearLayout) rootView.findViewById(R.id.row_4);
+                tr24.setGravity(Gravity.CENTER);
+                // Row 4 Text Views
+                MakeButton(this_context, tr24, 1f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
+                        "REGISTRATION\nFORM");
             break;
             case 3:
                 textView.setText("Contact Us");
+
+
+                // Row 4
+                LinearLayout tr34 = (LinearLayout) rootView.findViewById(R.id.row_4);
+                tr34.setGravity(Gravity.CENTER);
+                // Row 4 Text Views
+                MakeButton(this_context, tr34, 1f, R.mipmap.calendar,
+                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
+                        "REGISTRATION\nFORM");
             break;
         }
 

@@ -61,6 +61,13 @@
                 tools:layout_height="@dimen/button_height"
                 android:weightSum="1"
                 android:id="@+id/row_4"></LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/last_row_height"
+                android:weightSum="1"
+                android:id="@+id/row_5"></LinearLayout>
         </LinearLayout>
     </ScrollView>
 
