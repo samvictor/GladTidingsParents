@@ -137,10 +137,10 @@ public class TabBuilder extends Fragment {
                 tr4.setGravity(Gravity.CENTER);
                 // Row 4 Text Views
                 MakeButton(this_context, tr4, 0.5f, R.mipmap.calendar,
-                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
+                        "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
                         "REGISTRATION\nFORM");
                 MakeButton(this_context, tr4, 0.5f, R.mipmap.calendar,
-                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Academy-Private-Pay-Enrollment-Packet.pdf",
+                        "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2016/08/Academy-Private-Pay-Enrollment-Packet.pdf",
                         "REGISTRATION\nPACKET");
                 break;
 
@@ -178,7 +178,7 @@ public class TabBuilder extends Fragment {
                 tr14.setGravity(Gravity.CENTER);
                 // Row 4 Text Views
                 MakeButton(this_context, tr14, 1f, R.mipmap.calendar,
-                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
+                        "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
                         "REGISTRATION\nFORM");
                 break;
 
@@ -211,7 +211,7 @@ public class TabBuilder extends Fragment {
                 tr24.setGravity(Gravity.CENTER);
                 // Row 4 Text Views
                 MakeButton(this_context, tr24, 1f, R.mipmap.calendar,
-                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
+                        "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
                         "REGISTRATION\nFORM");
             break;
             case 3:
@@ -223,7 +223,7 @@ public class TabBuilder extends Fragment {
                 tr34.setGravity(Gravity.CENTER);
                 // Row 4 Text Views
                 MakeButton(this_context, tr34, 1f, R.mipmap.calendar,
-                        "http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
+                        "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
                         "REGISTRATION\nFORM");
             break;
         }
