@@ -33,32 +33,32 @@
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                tools:layout_height="@dimen/button_height"
+                android:layout_height="wrap_content"
+                android:clickable="true"
                 android:weightSum="1"
                 android:id="@+id/row_1"></LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                tools:layout_height="@dimen/button_height"
+                android:layout_height="wrap_content"
+                android:clickable="true"
                 android:weightSum="1"
                 android:id="@+id/row_2"></LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                tools:layout_height="@dimen/button_height"
+                android:layout_height="wrap_content"
+                android:clickable="true"
                 android:weightSum="1"
                 android:id="@+id/row_3"></LinearLayout>
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/button_height"
-                tools:layout_height="@dimen/button_height"
+                android:layout_height="wrap_content"
+                android:clickable="true"
                 android:weightSum="1"
                 android:id="@+id/row_4"></LinearLayout>
 

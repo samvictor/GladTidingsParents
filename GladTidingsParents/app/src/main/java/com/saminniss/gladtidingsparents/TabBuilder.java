@@ -63,7 +63,7 @@ public class TabBuilder extends Fragment {
         tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         tv.setGravity(Gravity.CENTER);
 
-        // go to url when you click
+        /*/ go to url when you click
         tv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +71,7 @@ public class TabBuilder extends Fragment {
                 startActivity(browserIntent);
             }
         });
-
+*/
         tv.setText(tv_text);
 
         parent_view.addView(tv);
@@ -140,7 +140,7 @@ public class TabBuilder extends Fragment {
                         "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
                         "REGISTRATION\nFORM");
                 MakeButton(this_context, tr4, 0.5f, R.mipmap.calendar,
-                        "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2016/08/Academy-Private-Pay-Enrollment-Packet.pdf",
+                        "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2017/01/Academy-Private-Pay-Enrollment-Packet.pdf",
                         "REGISTRATION\nPACKET");
                 break;
 
@@ -217,12 +217,59 @@ public class TabBuilder extends Fragment {
             case 3:
                 textView.setText("Contact Us");
 
+                // Row 1
+                LinearLayout tr32 = (LinearLayout) rootView.findViewById(R.id.row_1);
+                tr32.setGravity(Gravity.CENTER);
+                tr32.setPadding(0, 40, 0, 40);
+                // Row 1 Text View
 
-                // Row 4
-                LinearLayout tr34 = (LinearLayout) rootView.findViewById(R.id.row_4);
-                tr34.setGravity(Gravity.CENTER);
-                // Row 4 Text Views
-                MakeButton(this_context, tr34, 1f, R.mipmap.calendar,
+                // make textview and add style from styles.TextStyle
+                TextView tv32 = new TextView(this_context);
+                tv32.setId(R.id.contact_tv);
+                if(Build.VERSION.SDK_INT >= 23)
+                    tv32.setTextAppearance(R.style.ParaTextStyle);
+                else
+                    tv32.setTextAppearance(this_context, R.style.TextStyle);
+
+                // set horizontal weight
+                LinearLayout.LayoutParams tv32_params = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f);
+                tv32.setLayoutParams(tv32_params);
+
+                // set background and center text
+                tv32.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                tv32.setGravity(Gravity.CENTER);
+                //tv32.setBackgroundResource(R.drawable.test_bg);
+
+                tv32.setText("PHONE    816-333-1054\n" +
+                        "ARK BUILDING    816-822-7676\n" +
+                        "FAX    816-333-0396\n" +
+                        "CHURCH    816-333-9102\n" +
+                        "\n" +
+                        "EMAIL    direfraser@aol.com\n" +
+                        "\n" +
+                        "OPEN\n" +
+                        "\n" +
+                        "Mon – Fri: 6:00 AM to 6:00 PM\n" +
+                        "\n" +
+                        "ADDRESS\n" +
+                        "\n" +
+                        "Glad Tidings Christian Academy\n" +
+                        "2830 East 60th Street\n" +
+                        "Kansas City, MO 64130\n" +
+                        "\n" +
+                        "MAILING ADDRESS\n" +
+                        "\n" +
+                        "P.O. Box 300932\n" +
+                        "Kansas City, MO 64130");
+                tr32.addView(tv32);
+
+
+                // Row 3
+                LinearLayout tr33 = (LinearLayout) rootView.findViewById(R.id.row_3);
+                tr33.setGravity(Gravity.CENTER);
+                //tr33.setBackgroundResource(R.drawable.test_bg);
+                // Row 3 Text Views
+                MakeButton(this_context, tr33, 1f, R.mipmap.calendar,
                         "https://drive.google.com/viewerng/viewer?url=http://www.gtcacademy.org/wp-content/uploads/2016/08/Enrollment-Form.pdf",
                         "REGISTRATION\nFORM");
             break;
